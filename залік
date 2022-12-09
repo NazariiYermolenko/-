@@ -1,0 +1,24 @@
+# Програма працює з латнським алфавітом. Можна вписати певний текст в консоль і записати шукане слово.програма видасть видасть абзаци з цим словом
+
+
+print('Input text')
+f = open('text.txt', 'w')
+inputText = input()
+print(inputText)
+f.write(inputText)
+f.close()
+
+f = open('text.txt')
+
+ans = input('Input your word ---> ')
+
+p = False
+
+for lines in f.read().split("\n\n"):
+    if ans in lines:
+        print(f'---------\n{lines}')
+        p = True
+
+if p == False:
+    print('There is no such word ')
+
